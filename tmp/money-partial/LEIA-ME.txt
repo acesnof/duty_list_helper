@@ -1,0 +1,34 @@
+NOTA — DISTRIBUIDOR DE DINHEIRO
+
+Abra "Distribuidor de Notas.html" num browser atualizado. Para usar noutro
+PC, copie apenas esse ficheiro. As imagens e bibliotecas estão incorporadas;
+não precisa de instalação, servidor ou internet. O browser tem de permitir
+ficheiros HTML locais e JavaScript.
+
+Introduza o stock de cada nota e os valores pedidos. Pode adicionar, duplicar
+e apagar distribuições. Os valores pedidos podem ser quaisquer inteiros
+positivos, até 1 000 000 000. São permitidas até 100 distribuições e até
+100 000 notas de cada denominação.
+
+O cálculo tenta cumprir todos os pedidos, com uma mistura equilibrada das
+notas disponíveis. Nunca ultrapassa o valor pedido nem utiliza stock inexistente.
+Quando não é possível cumprir todos os pedidos, segue a ordem da lista: cada
+destino recebe o maior valor possível com o stock ainda disponível.
+A mistura é depois melhorada sem alterar os valores atribuídos.
+
+A tabela distingue Valor pedido e Valor entregue. Havendo diferenças, aparece
+a coluna Observações com "Falta entregar ...", destacada a âmbar, e o total em
+falta. Por exemplo: 205 000 pedidos, apenas notas de 10 000 disponíveis e stock
+suficiente: entrega 200 000 e indica falta de 5 000.
+Se a procura conjunta atingir o limite de cálculo, aplica o cálculo por ordem
+da lista e apresenta um aviso. A preferência de equilíbrio não garante um ótimo
+matemático global entre destinos.
+
+O Excel e o PDF incluem valores pedidos, entregues, quantidades por denominação,
+observações destacadas, stock inicial e saldo em caixa. O PDF aceita várias
+páginas; caracteres não suportados pela fonte são substituídos por ?.
+
+Os dados são guardados neste browser quando o armazenamento local está
+disponível. Use Guardar sessão e Abrir sessão para transferir os dados entre PCs.
+Copiar apenas o HTML não transfere os dados introduzidos. Nenhum dado é enviado
+para a internet. Restrições de HTML, JavaScript ou downloads dependem do PC.

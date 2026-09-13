@@ -1,0 +1,12 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
+const dir=path.dirname(new URL(import.meta.url).pathname.replace(/^\/(.:)/,'$1'));
+const deps='C:/Users/fonse/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules';
+const images={};
+for(const value of [10000,5000,2000,1000,500]) images[value]='data:image/png;base64,'+(await fs.readFile(`C:/Users/fonse/Desktop/money_count/mediafiles/${value}.png`)).toString('base64');
+let html=await fs.readFile(path.join(dir,'index.html'),'utf8');
+for(const [tag,file] of [['STYLE','style.css'],['SOLVER','solver.js'],['APP','app.js']]) html=html.replace(`/* ${tag} */`,await fs.readFile(path.join(dir,file),'utf8'));
+html=html.replace('/* ASSETS */',`const NOTE_IMAGES=${JSON.stringify(images)};`);
+html=html.replace('/* ZIP */',await fs.readFile(`${deps}/jszip/dist/jszip.min.js`,'utf8')).replace('/* PDF */',await fs.readFile(`${deps}/pdf-lib/dist/pdf-lib.min.js`,'utf8'));
+await fs.writeFile(path.join(dir,'Distribuidor de Notas.html'),html);
+console.log('Criado: money/Distribuidor de Notas.html');
