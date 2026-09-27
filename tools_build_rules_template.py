@@ -31,6 +31,9 @@ with zipfile.ZipFile(output, "w") as target:
             replacements = {
                 "Duty List - All days": "{{MODE}}",
                 "One continuous rotation covers every calendar day.": "{{MODE_DETAIL}}",
+                "All calendar days belong to one continuous duty rotation, regardless of weekday, weekend or official day off.": "{{RULE2}}",
+                "No person may perform duty on consecutive days. The next eligible person in the continuous list is selected.": "{{RULE3}}",
+                "When personnel have no previous duty reference, priority is determined by the earliest mission arrival date, then the lowest rank, earliest date of rank and, finally, alphabetical name order.": "{{ORDER_RULE}}",
                 "9001 days": "{{BEFORE}} days",
                 "9002 days": "{{AFTER}} days",
                 "9003 days": "{{SOM}} days",
